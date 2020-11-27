@@ -1,28 +1,28 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Slova.Dictionary.Db.Models
+namespace Slova.Dictionary.Controllers.Models
 {
-    public class Word
+    public class WordCreateModel
     {
-        public long WordId { get; set; }
-        
         [Required]
+        [MaxLength(50)]
         public string Name { get; set; }
+        
+        [MaxLength(50)]
         public string Transcription { get; set; }
 
         [Required]
+        [MaxLength(1000)]
         public string Translation { get; set; }
         
+        [Range(0,2)]
         public int Gender { get; set; }
-        
-        [Required]
-        public DateTime CreationDate { get; set; }
 
+        [Required]
+        [Range(1,3)]
         public int LanguageId { get; set; }
-        public Language Language { get; set; }
-
-        [Required]
+        
+        [Range(0, int.MaxValue)]
         public int UserId { get; set; }
     }
 }

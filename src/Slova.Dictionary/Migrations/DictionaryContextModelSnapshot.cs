@@ -62,6 +62,9 @@ namespace Slova.Dictionary.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
                     b.HasKey("WordId");
 
                     b.HasIndex("LanguageId");

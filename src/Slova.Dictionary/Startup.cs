@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Slova.Dictionary.Db;
+using Slova.Dictionary.Infrastructure;
 using Slova.Dictionary.Repos;
 
 namespace Slova.Dictionary
@@ -35,6 +36,8 @@ namespace Slova.Dictionary
                 options.UseNpgsql("Host=localhost;Database=slova;Username=postgres;Password=mysecretpassword",
                     x => x.MigrationsAssembly("Slova.Dictionary")));
 
+            services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+            
             services.AddTransient<IWordsRepository, WordsRepository>();
         }
 

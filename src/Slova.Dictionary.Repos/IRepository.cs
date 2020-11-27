@@ -25,7 +25,7 @@ namespace Slova.Dictionary.Repos
         //
         // T FirstOrDefault();
         //
-        // void Add(T entity);
+        Task AddAsync(T entity);
         //
         // void AddRange(IEnumerable<T> entities);
         //
@@ -37,6 +37,6 @@ namespace Slova.Dictionary.Repos
         //
         // void UpdateEntity(T entityToUpdate);
         //
-        // Task SaveChangesAsync();
+        Task SaveChangesAsync();
     }
 }

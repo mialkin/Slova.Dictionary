@@ -21,5 +21,15 @@ namespace Slova.Dictionary.Repos
             List<T> result = await _set.ToListAsync();
             return result;
         }
+
+        public async Task AddAsync(T entity)
+        {
+            await _set.AddAsync(entity);
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await Context.SaveChangesAsync();
+        }
     }
 }

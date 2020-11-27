@@ -6,6 +6,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Slova.Dictionary.Db\Slova.Dictionary.Db.csproj" />
+      <ProjectReference Include="..\Slova.Dictionary.Repos\Slova.Dictionary.Repos.csproj" />
     </ItemGroup>
 
 </Project>

@@ -32,7 +32,8 @@ namespace Slova.Dictionary
             services.AddControllers();
 
             services.AddDbContext<DictionaryContext>(options =>
-                options.UseNpgsql("Host=localhost;Database=slova;Username=postgres;Password=mysecretpassword"));
+                options.UseNpgsql("Host=localhost;Database=slova;Username=postgres;Password=mysecretpassword",
+                    x => x.MigrationsAssembly("Slova.Dictionary")));
 
             services.AddTransient<IWordsRepository, WordsRepository>();
         }

@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slova.Dictionary", "src\Slo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slova.Dictionary.Db", "src\Slova.Dictionary.Db\Slova.Dictionary.Db.csproj", "{07C7C477-1D20-4D6F-AAA0-5BB52AAFEA12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slova.Dictionary.Repos", "src\Slova.Dictionary.Repos\Slova.Dictionary.Repos.csproj", "{DA1148F1-C2FD-495E-99F8-FDFB8E988CCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{07C7C477-1D20-4D6F-AAA0-5BB52AAFEA12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07C7C477-1D20-4D6F-AAA0-5BB52AAFEA12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07C7C477-1D20-4D6F-AAA0-5BB52AAFEA12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA1148F1-C2FD-495E-99F8-FDFB8E988CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA1148F1-C2FD-495E-99F8-FDFB8E988CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA1148F1-C2FD-495E-99F8-FDFB8E988CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA1148F1-C2FD-495E-99F8-FDFB8E988CCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

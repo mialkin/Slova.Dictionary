@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Slova.Dictionary.Db;
@@ -9,9 +10,10 @@ using Slova.Dictionary.Db;
 namespace Slova.Dictionary.Migrations
 {
     [DbContext(typeof(DictionaryContext))]
-    partial class DictionaryContextModelSnapshot : ModelSnapshot
+    [Migration("20201127225502_UniqueNameUserId")]
+    partial class UniqueNameUserId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,7 +71,7 @@ namespace Slova.Dictionary.Migrations
 
                     b.HasIndex("LanguageId");
 
-                    b.HasIndex("Name", "LanguageId", "UserId")
+                    b.HasIndex("Name", "UserId")
                         .IsUnique();
 
                     b.ToTable("Words");

@@ -11,5 +11,12 @@ namespace Slova.Dictionary.Db
         public DictionaryContext(DbContextOptions<DictionaryContext> options) : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Word>()
+                .HasIndex(p => new { p.Name, p.LanguageId, p.UserId })
+                .IsUnique();
+        }
     }
 }

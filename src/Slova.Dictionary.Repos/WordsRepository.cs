@@ -19,6 +19,8 @@ namespace Slova.Dictionary.Repos
         {
             IQueryable<Word> words = Context.Set<Word>().AsQueryable();
 
+            words = words.Where(x => x.UserId == filter.UserId);
+
             if (filter.LanguageId > 0)
                 words = words.Where(x => x.LanguageId == filter.LanguageId);
 

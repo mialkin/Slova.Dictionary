@@ -7,6 +7,6 @@ namespace Slova.Dictionary.Repos
 {
     public interface IWordsRepository : IRepository<Word>
     {
-        Task<IList<Word>> List(ListWordsFilter filter);
+        Task<List<Word>> List(ListWordsFilter filter);
     }
 }

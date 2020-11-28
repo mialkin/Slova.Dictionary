@@ -14,8 +14,8 @@ namespace Slova.Dictionary.Repos
         public WordsRepository(DictionaryContext context) : base(context)
         {
         }
-
-        public async Task<IList<Word>> List(ListWordsFilter filter)
+        
+        public Task<List<Word>> List(ListWordsFilter filter)
         {
             IQueryable<Word> words = Context.Set<Word>().AsQueryable();
 
@@ -30,7 +30,7 @@ namespace Slova.Dictionary.Repos
             if (filter.Take > 0)
                 words = words.Take(filter.Take);
 
-            return await words.ToListAsync();
+            return words.ToListAsync();
         }
     }
 }

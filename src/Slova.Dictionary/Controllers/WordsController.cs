@@ -29,7 +29,7 @@ namespace Slova.Dictionary.Controllers
         }
 
         [HttpPost]
-        public async Task Create(WordCreateModel model)
+        public Task Create(WordCreateModel model)
         {
             var word = new Word
             {
@@ -41,7 +41,7 @@ namespace Slova.Dictionary.Controllers
                 CreationDate = _dateTimeProvider.UtcNow,
             };
 
-            await _wordsRepository.AddAsync(word);
+            return _wordsRepository.AddAsync(word);
         }
     }
 }

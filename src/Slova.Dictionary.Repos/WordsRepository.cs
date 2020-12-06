@@ -17,7 +17,7 @@ namespace Slova.Dictionary.Repos
         
         public Task<List<Word>> List(ListWordsFilter filter)
         {
-            IQueryable<Word> words = Context.Set<Word>().AsQueryable();
+            IQueryable<Word> words = Context.Set<Word>();
 
             words = words.Where(x => x.UserId == filter.UserId);
 

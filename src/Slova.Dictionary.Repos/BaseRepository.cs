@@ -9,7 +9,7 @@ namespace Slova.Dictionary.Repos
         protected readonly DbContext Context;
         private readonly DbSet<T> _set;
 
-        public BaseRepository(DbContext context)
+        protected BaseRepository(DbContext context)
         {
             Context = context;
 
@@ -27,9 +27,9 @@ namespace Slova.Dictionary.Repos
             await _set.AddAsync(entity);
         }
 
-        public async Task SaveChangesAsync()
+        public Task<int> SaveChangesAsync()
         {
-            await Context.SaveChangesAsync();
+            return Context.SaveChangesAsync();
         }
     }
 }

@@ -37,6 +37,6 @@ namespace Slova.Dictionary.Repos
         //
         // void UpdateEntity(T entityToUpdate);
         //
-        Task SaveChangesAsync();
+        Task<int> SaveChangesAsync();
     }
 }

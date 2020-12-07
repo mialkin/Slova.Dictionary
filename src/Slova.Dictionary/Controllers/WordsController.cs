@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -23,14 +24,20 @@ namespace Slova.Dictionary.Controllers
         [HttpGet]
         public async Task<IActionResult> List(ListWordsFilter filter)
         {
-            IEnumerable<Word> words = await _wordsRepository.List(filter);
+            if (ModelState.IsValid == false) // TODO move to custom middleware?
+                return BadRequest(ModelState);
+            
+            IEnumerable<Word> words = await _wordsRepository.ListAsync(filter);
 
             return Ok(words);
         }
 
         [HttpPost]
-        public Task Create(WordCreateModel model)
+        public async Task<IActionResult> Create([FromBody]WordCreateModel model)
         {
+            if (ModelState.IsValid == false)
+                return BadRequest(ModelState);
+
             var word = new Word
             {
                 Name = model.Name,
@@ -41,7 +48,9 @@ namespace Slova.Dictionary.Controllers
                 CreationDate = _dateTimeProvider.UtcNow,
             };
 
-            return _wordsRepository.AddAsync(word);
+            await _wordsRepository.AddAsync(word);
+
+            return Ok();
         }
     }
 }

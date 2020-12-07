@@ -15,7 +15,7 @@ namespace Slova.Dictionary.Repos
         {
         }
         
-        public Task<List<Word>> List(ListWordsFilter filter)
+        public Task<List<Word>> ListAsync(ListWordsFilter filter)
         {
             IQueryable<Word> words = Context.Set<Word>();
 

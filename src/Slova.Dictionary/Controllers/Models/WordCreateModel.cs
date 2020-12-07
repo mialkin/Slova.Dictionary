@@ -22,7 +22,7 @@ namespace Slova.Dictionary.Controllers.Models
         [Range(1,3)]
         public int LanguageId { get; set; }
         
-        [Range(0, int.MaxValue)]
+        [Range(1, int.MaxValue)]
         public int UserId { get; set; }
     }
 }

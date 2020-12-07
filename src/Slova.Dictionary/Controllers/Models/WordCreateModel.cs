@@ -19,7 +19,7 @@ namespace Slova.Dictionary.Controllers.Models
         public int Gender { get; set; }
 
         [Required]
-        [Range(1,3)]
+        [Range(1,int.MaxValue)]
         public int LanguageId { get; set; }
         
         [Range(1, int.MaxValue)]

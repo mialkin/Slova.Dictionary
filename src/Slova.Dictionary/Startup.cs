@@ -30,14 +30,16 @@ namespace Slova.Dictionary
                 });
             });
 
-            services.AddControllers();
+            services
+                .AddControllers()
+                .AddJsonOptions(options => { options.JsonSerializerOptions.WriteIndented = true; });
 
             services.AddDbContext<DictionaryContext>(options =>
                 options.UseNpgsql("Host=localhost;Database=slova;Username=postgres;Password=mysecretpassword",
                     x => x.MigrationsAssembly("Slova.Dictionary")));
 
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
-            
+
             services.AddTransient<IWordsRepository, WordsRepository>();
         }
 

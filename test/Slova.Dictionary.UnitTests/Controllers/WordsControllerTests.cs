@@ -15,7 +15,7 @@ namespace Slova.Dictionary.UnitTests.Controllers
     public class WordsControllerTests
     {
         [Fact]
-        public async Task IndexThrowsWhenFilterIsNull()
+        public async Task List_ThrowsWhenFilterIsNull()
         {
             // Arrange
             var wordsRepository = new Mock<IWordsRepository>();
@@ -33,7 +33,7 @@ namespace Slova.Dictionary.UnitTests.Controllers
         }
 
         [Fact]
-        public async Task ListReturnsOkWhenFilterModelIsValid()
+        public async Task List_ReturnsOkWhenFilterModelIsValid()
         {
             var wordsRepository = new Mock<IWordsRepository>();
             wordsRepository
@@ -54,7 +54,7 @@ namespace Slova.Dictionary.UnitTests.Controllers
         }
 
         [Fact]
-        public async Task CreateReturnsOkWhenCreateModelIsValid()
+        public async Task Create_ReturnsOkWhenCreateModelIsValid()
         {
             var wordsRepository = new Mock<IWordsRepository>();
             wordsRepository
@@ -66,21 +66,21 @@ namespace Slova.Dictionary.UnitTests.Controllers
             {
                 LanguageId = 1
             };
+
             IActionResult result = await controller.Create(model);
-            
+
             Assert.IsType<OkObjectResult>(result);
         }
 
-
         [Fact]
-        public async Task CreateReturnsBadRequestWhenModelStateIsNotValid()
+        public async Task Create_ReturnsBadRequestWhenModelStateIsNotValid()
         {
             var wordsRepository = new Mock<IWordsRepository>();
             var controller = new WordsController(null, dateTimeProvider: null);
             controller.ModelState.AddModelError("ErrorKey", "Error message.");
-            
+
             IActionResult result = await controller.Create(null);
-            
+
             Assert.IsType<BadRequestObjectResult>(result);
         }
     }

@@ -5,6 +5,11 @@ namespace Slova.Dictionary.Db.Models
 {
     public class Language
     {
+        public Language(string name)
+        {
+            Name = name;
+        }
+
         public int LanguageId { get; set; }
         
         [Required]

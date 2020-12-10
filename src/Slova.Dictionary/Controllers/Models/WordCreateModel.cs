@@ -4,14 +4,10 @@ namespace Slova.Dictionary.Controllers.Models
 {
     public class WordCreateModel
     {
-        public WordCreateModel(string name, string transcription, string translation, int gender, int languageId, int userId)
+        public WordCreateModel(string name, string translation)
         {
             Name = name;
-            Transcription = transcription;
             Translation = translation;
-            Gender = gender;
-            LanguageId = languageId;
-            UserId = userId;
         }
 
         [Required]
@@ -19,7 +15,7 @@ namespace Slova.Dictionary.Controllers.Models
         public string Name { get; set; }
         
         [MaxLength(50)]
-        public string Transcription { get; set; }
+        public string? Transcription { get; set; }
 
         [Required]
         [MaxLength(1000)]

@@ -5,8 +5,8 @@ namespace Slova.Dictionary.Db
 {
     public class DictionaryContext : DbContext
     {
-        public DbSet<Language> Languages { get; set; }
-        public DbSet<Word> Words { get; set; }
+        public DbSet<Language>? Languages { get; set; }
+        public DbSet<Word>? Words { get; set; }
 
         public DictionaryContext(DbContextOptions<DictionaryContext> options) : base(options)
         {

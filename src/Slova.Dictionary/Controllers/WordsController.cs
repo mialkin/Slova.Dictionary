@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -35,13 +34,10 @@ namespace Slova.Dictionary.Controllers
         [Route("create")]
         public async Task<IActionResult> Create([FromBody] WordCreateModel model)
         {
-            var word = new Word
+            var word = new Word(model.LanguageId, model.UserId, model.Name, model.Translation)
             {
-                Name = model.Name,
                 Transcription = model.Transcription,
-                Translation = model.Translation,
                 Gender = model.Gender,
-                LanguageId = model.LanguageId,
                 CreationDate = _dateTimeProvider.UtcNow,
             };
 

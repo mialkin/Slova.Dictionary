@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -14,21 +15,16 @@ namespace Slova.Dictionary.Repos
         public WordsRepository(DictionaryContext context) : base(context)
         {
         }
-        
+
         public Task<List<Word>> ListAsync(ListWordsFilter filter)
         {
             IQueryable<Word> words = Context.Set<Word>();
 
-            words = words.Where(x => x.UserId == filter.UserId);
-
-            if (filter.LanguageId > 0)
-                words = words.Where(x => x.LanguageId == filter.LanguageId);
-
-            if (filter.Skip > 0)
-                words = words.Skip(filter.Skip);
-
-            if (filter.Take > 0)
-                words = words.Take(filter.Take);
+            words = words
+                .Where(x => x.UserId == filter.UserId && x.LanguageId == filter.LanguageId)
+                .OrderByDescending(x => x.CreationDate)
+                .Skip(filter.Skip)
+                .Take(filter.Take);
 
             return words.ToListAsync();
         }

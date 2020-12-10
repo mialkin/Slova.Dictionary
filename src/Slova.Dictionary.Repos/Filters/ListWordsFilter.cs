@@ -17,7 +17,7 @@ namespace Slova.Dictionary.Repos.Filters
         public int Skip { get; set; }
         public int Take { get; set; } = 100;
 
-        public Dictionary<string, ListSortDirection> Sort { get; set; } = new Dictionary<string, ListSortDirection>
+        public Dictionary<string, ListSortDirection> Sort { get; set; } = new()
         {
             [nameof(Word.CreationDate)] = ListSortDirection.Descending
         };

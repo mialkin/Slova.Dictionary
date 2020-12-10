@@ -15,21 +15,17 @@ namespace Slova.Dictionary.IntegrationTests.ModelBindings
         }
 
         [Theory]
-        [InlineData("/Words/List")]
+        [InlineData("/words/list")]
         public async Task Get_EndpointsReturnSuccessAndCorrectContentType(string url)
         {
-            // Arrange
             HttpClient client = _factory.CreateClient();
 
-            // Act
             var response = await client.GetAsync(url);
 
-            // Assert
             //response.EnsureSuccessStatusCode(); // Status Code 200-299
             if (response.Content.Headers.ContentType != null)
             {
-                Assert.Equal("text/html; charset=utf-8",
-                    response.Content.Headers.ContentType.ToString());
+                Assert.Equal("text/html; charset=utf-8", response.Content.Headers.ContentType.ToString());
             }
         }
     }

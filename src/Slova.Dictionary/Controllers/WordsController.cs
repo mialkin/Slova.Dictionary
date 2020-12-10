@@ -10,6 +10,8 @@ using Slova.Dictionary.Repos.Filters;
 
 namespace Slova.Dictionary.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class WordsController : ControllerBase
     {
         private readonly IWordsRepository _wordsRepository;
@@ -22,22 +24,17 @@ namespace Slova.Dictionary.Controllers
         }
 
         [HttpGet]
+        [Route("list")]
         public async Task<IActionResult> List(ListWordsFilter filter)
         {
-            if (ModelState.IsValid == false) // TODO move to custom middleware?
-                return BadRequest(ModelState);
-            
             IEnumerable<Word> words = await _wordsRepository.ListAsync(filter);
-
             return Ok(words);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody]WordCreateModel model)
+        [Route("create")]
+        public async Task<IActionResult> Create([FromBody] WordCreateModel model)
         {
-            if (ModelState.IsValid == false)
-                return BadRequest(ModelState);
-
             var word = new Word
             {
                 Name = model.Name,
@@ -49,6 +46,7 @@ namespace Slova.Dictionary.Controllers
             };
 
             await _wordsRepository.AddAsync(word);
+            await _wordsRepository.SaveChangesAsync();
 
             return Ok();
         }

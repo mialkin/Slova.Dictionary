@@ -22,11 +22,7 @@ namespace Slova.Dictionary.IntegrationTests.ModelBindings
 
             var response = await client.GetAsync(url);
 
-            //response.EnsureSuccessStatusCode(); // Status Code 200-299
-            if (response.Content.Headers.ContentType != null)
-            {
-                Assert.Equal("text/html; charset=utf-8", response.Content.Headers.ContentType.ToString());
-            }
+            
         }
     }
 }

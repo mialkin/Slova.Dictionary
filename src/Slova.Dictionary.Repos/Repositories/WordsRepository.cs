@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Slova.Dictionary.Db;
 using Slova.Dictionary.Db.Models;
 using Slova.Dictionary.Repos.Filters;
+using Slova.Dictionary.Repos.Infrastructure;
+using Slova.Dictionary.Repos.Interfaces;
 
-namespace Slova.Dictionary.Repos
+namespace Slova.Dictionary.Repos.Repositories
 {
     public class WordsRepository : BaseRepository<Word>, IWordsRepository
     {

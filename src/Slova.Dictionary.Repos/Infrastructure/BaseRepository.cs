@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace Slova.Dictionary.Repos
+namespace Slova.Dictionary.Repos.Infrastructure
 {
     public class BaseRepository<T> : IRepository<T> where T : class
     {

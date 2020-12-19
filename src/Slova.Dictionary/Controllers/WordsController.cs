@@ -6,6 +6,7 @@ using Slova.Dictionary.Db.Models;
 using Slova.Dictionary.Infrastructure;
 using Slova.Dictionary.Repos;
 using Slova.Dictionary.Repos.Filters;
+using Slova.Dictionary.Repos.Interfaces;
 
 namespace Slova.Dictionary.Controllers
 {

@@ -1,0 +1,13 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=62ef70e4_002D0f15_002D40be_002Dac4b_002Dcf660d2f49a4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Index_ReturnsAViewResult_WithAListOfBrainstormSessions #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::1B7142C6-8332-41C8-9692-1F6B3D1C436A::net5.0::Slova.Dictionary.UnitTests.Controllers.WordsControllerTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::67126CF1-FB18-4511-99E3-A81357D3C507::net5.0::Slova.Dictionary.IntegrationTests.ModelBindings.WordsBindingsTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f57bfc6f_002D1060_002D44e7_002Da04f_002D042849803357/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Index_ReturnsAViewResult_WithAListOfBrainstormSessions" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::1B7142C6-8332-41C8-9692-1F6B3D1C436A::net5.0::Slova.Dictionary.UnitTests.Controllers.WordsControllerTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	</wpf:ResourceDictionary>
